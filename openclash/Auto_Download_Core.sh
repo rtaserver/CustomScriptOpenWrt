@@ -6,10 +6,10 @@ echo "Current Arch: $ARCH_1"
 echo "Start YACD Download !"
 
 yacd="https://github.com/taamarin/yacd-meta/archive/gh-pages.zip"
-mkdir -p usr/share/openclash/ui
-if wget --no-check-certificate -nv $yacd -O usr/share/openclash/ui/yacd.zip; then
-   unzip -qq usr/share/openclash/ui/yacd.zip -d usr/share/openclash/ui && rm usr/share/openclash/ui/yacd.zip
-   if mv usr/share/openclash/ui/yacd* usr/share/openclash/ui/yacd.new; then 
+mkdir -p /usr/share/openclash/ui
+if wget --no-check-certificate -nv $yacd -O /usr/share/openclash/ui/yacd.zip; then
+   unzip -qq /usr/share/openclash/ui/yacd.zip -d /usr/share/openclash/ui && rm /usr/share/openclash/ui/yacd.zip
+   if mv /usr/share/openclash/ui/yacd* /usr/share/openclash/ui/yacd.new; then 
      echo "YACD Dashboard download successfully."
    fi
 else
@@ -24,7 +24,7 @@ clash_tun="https://github.com/vernesong/OpenClash/raw/core/master/premium/$(curl
 clash_meta_17="https://github.com/MetaCubeX/mihomo/releases/download/v1.17.0/mihomo-linux-$ARCH_1-v1.17.0.gz"
 
 mkdir -p etc/openclash/core
-cd etc/openclash/core || { echo "Clash core path does not exist!"; exit 1; }
+cd /etc/openclash/core || { echo "Clash core path does not exist!"; exit 1; }
 echo "Downloading clash.tar.gz..."
 if wget --no-check-certificate -nv -O clash.tar.gz $clash; then
    tar -zxf clash.tar.gz
