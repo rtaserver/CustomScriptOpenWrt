@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ARCH_1 = $(uname -m)
+ARCH_1=$(uname -m)
 echo "Current Arch: $ARCH_1"
 
 echo "Start YACD Download !"
